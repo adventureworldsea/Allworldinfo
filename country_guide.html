@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>World Country Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; padding: 20px; }
+    .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; }
+    h1, h2 { color: #2c3e50; }
+    .country-card { margin-bottom: 40px; border-bottom: 1px solid #ccc; padding-bottom: 20px; }
+    img { width: 100px; }
+    .label { font-weight: bold; }
+    input[type="text"] {
+      width: 100%; padding: 10px; margin-bottom: 20px; font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>World Country Guide</h1>
+    <input type="text" id="search" placeholder="Search country..." onkeyup="filterCountries()">
+    <div id="countries">
+      
+    <div class="country-card" data-name="India">
+      <h2>India</h2>
+      <img src="https://flagcdn.com/w320/in.png" alt="Flag of India"><br><br>
+      <div><span class="label">Continent:</span> Asia</div>
+      <div><span class="label">Region:</span> South Asia</div>
+      <div><span class="label">Capital:</span> New Delhi</div>
+      <div><span class="label">Languages:</span> Hindi, English</div>
+      <div><span class="label">Demonym:</span> Indian</div>
+      <div><span class="label">Population:</span> 1.4 Billion</div>
+      <div><span class="label">Currency:</span> Indian Rupee (INR)</div>
+      <div><span class="label">Timezone:</span> UTC+5:30</div>
+      <div><span class="label">Map:</span> <a href="https://www.google.com/maps/place/India" target="_blank">View on Google Maps</a></div>
+      <div><span class="label">Fun Fact:</span> India is the world's largest democracy.</div>
+    </div>
+    
+
+    <div class="country-card" data-name="France">
+      <h2>France</h2>
+      <img src="https://flagcdn.com/w320/fr.png" alt="Flag of France"><br><br>
+      <div><span class="label">Continent:</span> Europe</div>
+      <div><span class="label">Region:</span> Western Europe</div>
+      <div><span class="label">Capital:</span> Paris</div>
+      <div><span class="label">Languages:</span> French</div>
+      <div><span class="label">Demonym:</span> French</div>
+      <div><span class="label">Population:</span> 67 Million</div>
+      <div><span class="label">Currency:</span> Euro (EUR)</div>
+      <div><span class="label">Timezone:</span> UTC+1</div>
+      <div><span class="label">Map:</span> <a href="https://www.google.com/maps/place/France" target="_blank">View on Google Maps</a></div>
+      <div><span class="label">Fun Fact:</span> France has the most time zones of any country in the world.</div>
+    </div>
+    
+
+    <div class="country-card" data-name="Brazil">
+      <h2>Brazil</h2>
+      <img src="https://flagcdn.com/w320/br.png" alt="Flag of Brazil"><br><br>
+      <div><span class="label">Continent:</span> South America</div>
+      <div><span class="label">Region:</span> Latin America</div>
+      <div><span class="label">Capital:</span> Brasília</div>
+      <div><span class="label">Languages:</span> Portuguese</div>
+      <div><span class="label">Demonym:</span> Brazilian</div>
+      <div><span class="label">Population:</span> 214 Million</div>
+      <div><span class="label">Currency:</span> Brazilian Real (BRL)</div>
+      <div><span class="label">Timezone:</span> UTC−3</div>
+      <div><span class="label">Map:</span> <a href="https://www.google.com/maps/place/Brazil" target="_blank">View on Google Maps</a></div>
+      <div><span class="label">Fun Fact:</span> Brazil is home to the Amazon Rainforest, the largest in the world.</div>
+    </div>
+    
+    </div>
+  </div>
+
+  <script>
+    function filterCountries() {
+      var input = document.getElementById("search").value.toLowerCase();
+      var cards = document.getElementsByClassName("country-card");
+      for (var i = 0; i < cards.length; i++) {
+        var name = cards[i].getAttribute("data-name").toLowerCase();
+        cards[i].style.display = name.includes(input) ? "" : "none";
+      }
+    }
+  </script>
+</body>
+</html>
